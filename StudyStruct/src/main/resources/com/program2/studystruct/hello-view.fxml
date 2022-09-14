@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.program2.studystruct.HelloController">
+      <bottom>
+         <ToolBar prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <items>
+            <Label text="Индекс" />
+                <TextField fx:id="index" prefHeight="26.0" prefWidth="43.0" />
+            <Label text="Элемент" />
+            <TextField fx:id="element" prefHeight="26.0" prefWidth="54.0" />
+            <VBox prefHeight="54.0" prefWidth="75.0">
+               <children>
+                  <RadioButton fx:id="before" mnemonicParsing="false" text="До">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="insertGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="onIndex" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="Вместо" toggleGroup="$insertGroup" />
+                  <RadioButton fx:id="after" mnemonicParsing="false" text="После" toggleGroup="$insertGroup" />
+                  <RadioButton fx:id="end" mnemonicParsing="false" selected="true" text="В конец" toggleGroup="$insertGroup" />
+               </children>
+            </VBox>
+            <VBox prefHeight="78.0" prefWidth="75.0">
+               <children>
+                      <Button mnemonicParsing="false" onAction="#Input" text="Вставка" />
+                      <Button mnemonicParsing="false" onAction="#Delete" text="Удаление" />
+                      <Button mnemonicParsing="false" onAction="#Search" text="Поиск" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="59.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="Возр.">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sort" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="desc" mnemonicParsing="false" text="Убыв." toggleGroup="$sort" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#sortBubble" prefHeight="66.0" prefWidth="84.0" text="Сортировка &#10;пузырьком" textAlignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#sortShell" prefHeight="42.0" prefWidth="70.0" text="Сортировка&#10;Шелла" textAlignment="CENTER" />
+            </items>
+         </ToolBar>
+      </bottom>
+   <left>
+
+   </left>
+   <center>
+      <TableView fx:id="list" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
